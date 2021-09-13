@@ -1,9 +1,12 @@
 import axios, { AxiosRequestConfig, AxiosResponse } from "axios";
 
 const axiosClient = axios.create({
-  baseURL: "https://bpm-json-server.herokuapp.com",
+  baseURL: "http://localhost:8180/kie-server/services/rest",
   headers: {
     "Content-Type": "application/json",
+
+    Authorization: "Basic YWRtaW46YWRtaW4=",
+    "Access-Control-Allow-Origin": "*",
   },
 });
 

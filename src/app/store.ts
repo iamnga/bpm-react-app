@@ -3,12 +3,14 @@ import counterReducer from "../features/counter/counterSlice";
 import memberReducer from "features/bpm-members/memberSlice";
 import rootSaga from "./rootSaga";
 import createSagaMiddleware from "redux-saga";
+import srsReducer from "features/srs/srsSlice";
 
 const sagaMiddleware = createSagaMiddleware();
 export const store = configureStore({
   reducer: {
     counter: counterReducer,
     member: memberReducer,
+    srs: srsReducer,
   },
   middleware: (getDefaultMiddleware) =>
     getDefaultMiddleware().concat(sagaMiddleware),
